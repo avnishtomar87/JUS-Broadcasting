@@ -1,0 +1,1157 @@
+{
+	"info": {
+		"_postman_id": "e99003b2-11d1-422c-9aee-d020feac09c7",
+		"name": "JUS_BROADCASTING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16396568"
+	},
+	"item": [
+		{
+			"name": "signUp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"jwt\", pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Jus\",\r\n    \"last_name\":\"Broadcasting\",\r\n    \"dob\":\"1997-06-26\",\r\n    \"mobile_number\":\"7894562456\",\r\n    \"email\":\"avnishtest3628@gmail.com\",\r\n    \"password\":\"123\",\r\n   \"lat\":\"26.2124\",\r\n    \"long\":\"78.1772\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/signup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logIn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"jwt\", pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"avi2@test.com\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminLogin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"jwt\", pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"avi2@test.com\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/adminLogin",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"adminLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/all",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserProfile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/profile/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"profile",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upadteUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Avi\",\r\n    \"last_name\":\"singh\",\r\n    \"dob\":\"2005-06-26\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/update/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAdmin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Avnish\",\r\n    \"last_name\":\"Tomar\",\r\n    \"dob\":\"2005-06-26\",\r\n    \"email\":\"avinish@test.com\",\r\n    \"mobile_number\":8794561235\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/updateAdmin/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"updateAdmin",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteuserByID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/delete/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resetPassword",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dob\": \"1999-09-10\",\r\n  \"email\": \"ajayg071@gmail.com\",\r\n  \"last_name\": \"GUPTA\",\r\n  \"mobile_number\": \"9876543210\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/resetPassword",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"resetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acoountVerification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/emailVerify?email=avi71@test.com",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"emailVerify"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "avi71@test.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLocation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lat\":\"33.830517\",\r\n    \"long\":\"-116.545601\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/location/3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"location",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMedia",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"channel_id\":6,\r\n\"media_url\":\"http://38.96.148.253:6680/;stream.mp3\",\r\n\"type\":\"radio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/media",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMedia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/media",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMediaById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/media/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"media",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMediaBychannelId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/media/all/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"media",
+						"all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateMedia",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"channel_id\":2,\r\n\"media_url\":\"https://www.youtube.com/watch?v=lGo8GmkH8xE\",\r\n\"type\":\"music\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/media/21",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"media",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMedia",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/media/3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"media",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addChannels",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "channel_name",
+							"value": "new channel testing 1",
+							"type": "text"
+						},
+						{
+							"key": "logo_url",
+							"type": "file",
+							"src": "/D:/Raysteeds_infotech/Yall-Project/compressed_images/Rectangle 147-min.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/channels",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllChannels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/channels",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getChannelById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/channel/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"channel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateChannel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "channel_name",
+							"value": "JUS Audiobook",
+							"type": "text"
+						},
+						{
+							"key": "logo_url",
+							"type": "file",
+							"src": "/D:/Raysteeds_infotech/jus_project/compressed_images/Audiobook-min.webp"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/channel/8",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"channel",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteChannel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/channel/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"channel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addSubscriptions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Basic\",\r\n    \"duration\":\"1 month\",\r\n    \"amount\":\"499\",\r\n    \"currency\":\"₹\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/subscriptions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSubscriptions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/subscriptions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSubscriptionById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/subscription/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscription",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateSubscription",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"3 month package\",\r\n    \"period\":\"3 months\",\r\n    \"amount\":\"999\",\r\n    \"currency\":\"dollar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/subscription/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscription",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSubscription",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/subscription/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscription",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addpaymentCards",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":2,\r\n    \"card_number\":\"789456318529632\",\r\n    \"card_type\":\"debit\",\r\n    \"cvv\":144,\r\n    \"card_expiry\":\"2005-05-26\",\r\n    \"state_country\":\"mp\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/paymentCards",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"paymentCards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllpaymentCards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/paymentCards",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"paymentCards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPaymentCardById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/paymentCard/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"paymentCard",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatepaymentCard",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card_number\":\"789456318529632\",\r\n    \"card_type\":\"debit\",\r\n    \"cvv\":144,\r\n    \"card_expiry\":\"2005-05-26\",\r\n    \"state_country\":\"mp\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/paymentCard/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"paymentCard",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePaymentCard",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/paymentCard/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"paymentCard",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAlluserSubscription",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/userSubscription",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"userSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUserSubscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":5,\r\n    \"subscription_id\":3,\r\n    \"payment_card_id\":1,\r\n    \"period\":\"12 months\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/userSubscription",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"userSubscription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserSubscriptionById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/userSubscription/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"userSubscription",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUserSubscription",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/userSubscription/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"userSubscription",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSubscribedUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/subscribedUsers/2",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"subscribedUsers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInvoice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/invoice/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"invoice",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "locationBasedPlans",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/subscriptions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sessionRetrieve",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":1,\r\n    \"subscription_id\":1,\r\n    \"session_id\":\"cs_test_a17nEthxcwTvTBVQkPXUZYGJNYdN6fymgxOXS2ZLTv1EUHb07B3lONuIY7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/session/retrieve",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"session",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sessionCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"success_url\":\"https://example.com/success\",\r\n    \"cancel_url\":\"https://example.com/cancel\",\r\n    \"mode\":\"subscription\",\r\n    \"price\":\"price_1LfeztG1jcHMdQMRucW0tCc1\",\r\n    \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/session/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"session",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fbSignup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accessToken\":\"EAAIzdRHQKyIBAIeJoJTZBnRFc55LgstmP5fideBvCYak2iBJ3hW06D8nImNGL4bHwWPZB9UHTpOCZBBWbetVZBR2C75wKabDLGA89qyGXLIrBfYZCnYRTwdym8PkoYN5tZCdGaomwEwbWQsysjgm4CeOsfNjz0df1KSgdaq9BOJlOd8Qd6kE45eJWb9VevIGRYW1LKOAwWqqOGfOEatKBVk31ISojQ6jiWZA5cSMinlbAZDZD\",\r\n     \"lat\":\"26.2124\",\r\n    \"long\":\"78.1772\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/fbSignup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"fbSignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "googleSignup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImNhYWJmNjkwODE5MTYxNmE5MDhhMTM4OTIyMGE5NzViM2MwZmJjYTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2NDMzMDI1MzkzNzItOWo1bzNsa3RlODNnZTh0N2p1aXRwZjg1NjIwY3U1M3YuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2NDMzMDI1MzkzNzItYnVlajRwZDA0aGZzbHVoaGI0dHQ1NTc1M2Q4NjF1djYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDg3NjAzODY1ODQ1Mzc1NDE5MTQiLCJlbWFpbCI6ImFqYXlnMDcwMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkFKQVkgR1VQVEEiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FGZFp1Y28wZU1HZ2tYWl9IbDdrVGtqdUYtWnNRS25TSlV4ZHdsbkhXM0h1VlE9czk2LWMiLCJnaXZlbl9uYW1lIjoiQUpBWSIsImZhbWlseV9uYW1lIjoiR1VQVEEiLCJsb2NhbGUiOiJlbi1HQiIsImlhdCI6MTY2Mjk4MDM4OSwiZXhwIjoxNjYyOTgzOTg5fQ.VJjVRr9SYKpS-TVd_4orWmhVxFkN43tX6NPtfituDyT83QOYR_CrCcc5v0aEL9W6ER4rcI7wOGfAQ7ZvZb6uqkiLBeyVyZ-zCzxfzpi17YfTbWOksouvAztWCYTm_1sMSxgKEqIhBKqQ9YBwDeQF-Hv0dR9Y8bd6WuCEpcupJcEYKSuIRCe1i4B22f3oir6BxZ1Tdpsj7hAgIRBZdB_aCVUyWTpk_OCfE1rL8_Httf61r0bfBuMt-PwAJGDnZ6elZTDFS8WEbZicexaV9BTdN5P73zXcevLIcJZ4jVuZ_Nbl4LVBYf8c3NsW6Lneo69G7TU5IDq7Omu929H36rO-gA\",\r\n    \"lat\":\"26.2124\",\r\n    \"long\":\"78.1772\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/googleSignup",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"googleSignup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fbLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accessToken\":\"EAAIzdRHQKyIBAIeJoJTZBnRFc55LgstmP5fideBvCYak2iBJ3hW06D8nImNGL4bHwWPZB9UHTpOCZBBWbetVZBR2C75wKabDLGA89qyGXLIrBfYZCnYRTwdym8PkoYN5tZCdGaomwEwbWQsysjgm4CeOsfNjz0df1KSgdaq9BOJlOd8Qd6kE45eJWb9VevIGRYW1LKOAwWqqOGfOEatKBVk31ISojQ6jiWZA5cSMinlbAZDZD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/fbLogin",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"fbLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "googleLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImNhYWJmNjkwODE5MTYxNmE5MDhhMTM4OTIyMGE5NzViM2MwZmJjYTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI2NDMzMDI1MzkzNzItOWo1bzNsa3RlODNnZTh0N2p1aXRwZjg1NjIwY3U1M3YuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI2NDMzMDI1MzkzNzItYnVlajRwZDA0aGZzbHVoaGI0dHQ1NTc1M2Q4NjF1djYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDg3NjAzODY1ODQ1Mzc1NDE5MTQiLCJlbWFpbCI6ImFqYXlnMDcwMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkFKQVkgR1VQVEEiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FGZFp1Y28wZU1HZ2tYWl9IbDdrVGtqdUYtWnNRS25TSlV4ZHdsbkhXM0h1VlE9czk2LWMiLCJnaXZlbl9uYW1lIjoiQUpBWSIsImZhbWlseV9uYW1lIjoiR1VQVEEiLCJsb2NhbGUiOiJlbi1HQiIsImlhdCI6MTY2Mjk4MDM4OSwiZXhwIjoxNjYyOTgzOTg5fQ.VJjVRr9SYKpS-TVd_4orWmhVxFkN43tX6NPtfituDyT83QOYR_CrCcc5v0aEL9W6ER4rcI7wOGfAQ7ZvZb6uqkiLBeyVyZ-zCzxfzpi17YfTbWOksouvAztWCYTm_1sMSxgKEqIhBKqQ9YBwDeQF-Hv0dR9Y8bd6WuCEpcupJcEYKSuIRCe1i4B22f3oir6BxZ1Tdpsj7hAgIRBZdB_aCVUyWTpk_OCfE1rL8_Httf61r0bfBuMt-PwAJGDnZ6elZTDFS8WEbZicexaV9BTdN5P73zXcevLIcJZ4jVuZ_Nbl4LVBYf8c3NsW6Lneo69G7TU5IDq7Omu929H36rO-gA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/googleLogin",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"googleLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accountStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/accountStatus/640",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"accountStatus",
+						"640"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "isExpiredPlan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/isExpired/679",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"isExpired",
+						"679"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

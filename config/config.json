@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "dbadmin",
+    "password": "Jus@2022db#@!",
+    "database": "jus_broadcasting",
+    "host": "3.230.160.51",
+    "dialect": "postgres",
+    "port": 5432
+  },
+  "test": {
+    "username": "dbadmin",
+    "password": "Jus@2022db#@!",
+    "database": "jus_broadcasting",
+    "host": "3.230.160.51",
+    "dialect": "postgres",
+    "port": 5432
+  },
+  "production": {
+    "username": "dbadmin",
+    "password": "Jus@2022db#@!",
+    "database": "jus_broadcasting",
+    "host": "3.230.160.51",
+    "dialect": "postgres",
+    "port": 5432
+  }
+}
